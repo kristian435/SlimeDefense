@@ -3,6 +3,8 @@ using TMPro;
 
 public class GameUI : MonoBehaviour
 {
+    public static GameUI Instance;
+
     [Header("UI tekstit")]
     [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private TextMeshProUGUI moneyText;
@@ -11,6 +13,23 @@ public class GameUI : MonoBehaviour
     [Header("Viittaukset")]
     [SerializeField] private WaveSpawner waveSpawner;
 
+    [Header("Shop ja tornien UI")]
+    [SerializeField] GameObject shopPanel;
+    [SerializeField] GameObject towerUIPanel;
+
+    private Tower selectedTower;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Update()
     {
         UpdateWaveUI();
@@ -36,5 +55,18 @@ public class GameUI : MonoBehaviour
                 livesText.text = "HP: " + GameManager.Instance.PlayerLives;
             }
         }
+    }
+    public void SelectTower(Tower tower)
+    {
+        selectedTower = tower;
+
+        if (towerUIPanel != null) towerUIPanel.SetActive(true);
+        if (shopPanel != null) shopPanel.SetActive(true);
+    }
+    public void DeSelectAll()
+    {
+        selectedTower = null;
+        if (towerUIPanel != null) towerUIPanel.SetActive(false);
+        if (shopPanel != null) shopPanel.SetActive(true);
     }
 }
