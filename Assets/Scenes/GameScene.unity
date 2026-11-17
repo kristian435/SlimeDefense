@@ -6760,7 +6760,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade
+  m_text: 'Upgrade
+
+    (200$)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -21888,7 +21890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.9000244, y: -10}
+  m_AnchoredPosition: {x: -6.8999023, y: -10}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &399240801
@@ -33172,7 +33174,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1304346490}
   timeBetweenWaves: 1
   spawnInterval: 1
-  totalWaves: 10
+  totalWaves: 0
   waveNumber: 0
 --- !u!1 &589538862 stripped
 GameObject:
@@ -56621,6 +56623,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4310614304489658, guid: 5cbae0602ce9acf41a98fda3a353569a, type: 3}
   m_PrefabInstance: {fileID: 985404259}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &986538656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986538657}
+  - component: {fileID: 986538658}
+  m_Layer: 0
+  m_Name: ClickManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &986538657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986538656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.40223, y: 19.65, z: -18.2985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986538658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986538656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c75c735d435684384e73ed609d4716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickManager
 --- !u!1 &986841731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1619558185565566, guid: 1d9cc67243350f643b8c562ed0503c49, type: 3}
@@ -62800,7 +62846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -6.9000244, y: 10}
+  m_AnchoredPosition: {x: -6.8999023, y: 10}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1036103627
@@ -80634,6 +80680,7 @@ GameObject:
   - component: {fileID: 1316719916}
   - component: {fileID: 1316719918}
   - component: {fileID: 1316719917}
+  - component: {fileID: 1316719919}
   m_Layer: 5
   m_Name: TowerUI
   m_TagString: Untagged
@@ -80701,6 +80748,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316719915}
   m_CullTransparentMesh: 1
+--- !u!114 &1316719919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316719915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb784e69acc9f24cb7281522df7d1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerUI
+  ui: {fileID: 1316719915}
+  upgradeCostText: {fileID: 109996312}
+  upgradeButton: {fileID: 399240801}
 --- !u!1001 &1318700563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85477,8 +85539,8 @@ MonoBehaviour:
   moneyText: {fileID: 2001742879}
   livesText: {fileID: 369968206}
   waveSpawner: {fileID: 588195022}
-  shopPanel: {fileID: 0}
-  towerUIPanel: {fileID: 0}
+  shopPanel: {fileID: 656980448}
+  towerUIPanel: {fileID: 1316719915}
 --- !u!1001 &1433209748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121884,7 +121946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 6.9000244, y: 0}
+  m_AnchoredPosition: {x: 6.8999023, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2129971933
@@ -121907,7 +121969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade cost
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -122524,3 +122586,4 @@ SceneRoots:
   - {fileID: 1736155815}
   - {fileID: 1379187078}
   - {fileID: 1173168238}
+  - {fileID: 986538657}

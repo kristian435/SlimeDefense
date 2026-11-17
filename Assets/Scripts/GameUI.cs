@@ -60,13 +60,35 @@ public class GameUI : MonoBehaviour
     {
         selectedTower = tower;
 
-        if (towerUIPanel != null) towerUIPanel.SetActive(true);
-        if (shopPanel != null) shopPanel.SetActive(true);
+        if (towerUIPanel != null)
+        {
+            towerUIPanel.SetActive(true);
+
+            TowerUI towerUIComp = towerUIPanel.GetComponent<TowerUI>();
+            if (towerUIComp != null)
+            {
+                towerUIComp.SetTarget(tower);
+            }
+        }
+
+        if (shopPanel != null) shopPanel.SetActive(false);
     }
     public void DeSelectAll()
     {
         selectedTower = null;
-        if (towerUIPanel != null) towerUIPanel.SetActive(false);
+
+        if (towerUIPanel != null)
+        {
+            towerUIPanel.SetActive(false);
+
+            // Piilotetaan myös TowerUI:n kautta jos tarpeen
+            TowerUI towerUIComp = towerUIPanel.GetComponent<TowerUI>();
+            if (towerUIComp != null)
+            {
+                towerUIComp.Hide();
+            }
+        }
+
         if (shopPanel != null) shopPanel.SetActive(true);
     }
 }

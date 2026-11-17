@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class TowerClick : MonoBehaviour
 {
-    private TowerUI towerUI;
+    private Tower towerComp;
     void Start()
     {
-        towerUI = FindObjectOfType<TowerUI>();
+        towerComp = GetComponent<Tower>();
     }
     private void OnMouseDown()
     {
-        Tower towerComp = GetComponent<Tower>();
-        if (towerComp != null && towerUI != null)
+        if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            return;
+        if (towerComp  != null && GameUI.Instance != null)
         {
-            towerUI.SetTarget(towerComp);
+            GameUI.Instance.SelectTower(towerComp);
         }
     }
 }
