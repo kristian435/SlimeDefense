@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    [Header("Yleiset tiedot")]
+    public string towerName = "Gun Tower";
+
     [Header("Ampumis Asetukset")]
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform[] firePoints;
-    [SerializeField] private float range = 5f;
+    [SerializeField] public float range = 5f;
     [SerializeField] private float fireRate = 1f;
-    [SerializeField] private float damage = 50f;
+    [SerializeField] public float damage = 50f;
+
+    [Header("P‰ivitys asetukset")]
+    public int upgradeCost = 50;
 
     [Header("K‰‰ntymis asetukset")]
     [SerializeField] private Transform partToRotate;
@@ -18,7 +24,6 @@ public class Tower : MonoBehaviour
 
     private void Start()
     {
-        // Kutsutaan vihollisen etsint‰‰ toistuvasti puolen sekunnin v‰lein
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -92,6 +97,13 @@ public class Tower : MonoBehaviour
                 }
             }
         }
+    }
+    public void Upgrade()
+    {
+        damage += 1f;
+        range += 5f;
+        upgradeCost = Mathf.RoundToInt(upgradeCost * 1.5f);
+        Debug.Log("Tornia p‰ivitetty! Uusi damage: " + damage);
     }
 
     private void OnDrawGizmosSelected()

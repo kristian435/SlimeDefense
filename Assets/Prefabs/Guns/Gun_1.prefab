@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4444371311542278827}
   - component: {fileID: 1565018625513754291}
   - component: {fileID: 4126356455382464916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1826063391772351197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 6025396873511185233}
   - component: {fileID: 7889195913207842763}
   - component: {fileID: 5015536394511536262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_1_Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 2205179105670979297}
   - component: {fileID: 1578577896263093640}
   - component: {fileID: 7613362047647716723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_1_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 2425143959346142309}
   - component: {fileID: 8165229947307466334}
   - component: {fileID: 2999674842104851653}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BelowGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 2510959709349791177}
   - component: {fileID: 3649951478394819224}
   - component: {fileID: 3048554962405771151}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,12 +647,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef17bcfe7a9ab9c4aacd1784f2bcbf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
+  towerName: Starter Gun Tower
   bulletPrefab: {fileID: 8914362594464675483, guid: 18be31dc2684d8941a56aa8cf1be4d10, type: 3}
   firePoints:
   - {fileID: 1826063391772351197}
   range: 5
-  fireRate: 3
-  damage: 2
+  fireRate: 4
+  damage: 1
+  upgradeCost: 50
   partToRotate: {fileID: 7564406577694440405}
   turnSpeed: 20
 --- !u!65 &3048554962405771151

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5903371355833433431}
   - component: {fileID: 3390860413843088702}
   - component: {fileID: 301746377625833775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2_Stand_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 810818697165403578}
   - component: {fileID: 6943839345957181834}
   - component: {fileID: 6250410256995950667}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 6234988443911401574}
   - component: {fileID: 6667396628906962446}
   - component: {fileID: 8452690451505635809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 567845697410095364}
   - component: {fileID: 6223530005413636047}
   - component: {fileID: 8782759801544885056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BelowGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9174444760578690739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 191634683173292829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 7581093049873747194}
   - component: {fileID: 3471677609040270123}
   - component: {fileID: 571309190879293749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 6941384280165919736}
   - component: {fileID: 8468858734141504345}
   - component: {fileID: 6009108976184844217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2_Stand_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 6597461389837835368}
   - component: {fileID: 7288331878520612968}
   - component: {fileID: 6657241387146134269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RangeIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -871,10 +871,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751617377361974315}
-  - component: {fileID: 5246783071199506732}
   - component: {fileID: 7292657591863803760}
-  - component: {fileID: 4193783846087603963}
-  m_Layer: 0
+  - component: {fileID: 7855468302057820638}
+  m_Layer: 8
   m_Name: Gun_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,8 +898,33 @@ Transform:
   - {fileID: 5421391466472136500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5246783071199506732
-CapsuleCollider:
+--- !u!114 &7292657591863803760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343465640200486085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef17bcfe7a9ab9c4aacd1784f2bcbf32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tower
+  towerName: Quad Gun tower
+  bulletPrefab: {fileID: 9145768048770594527, guid: 18b6c40db1c17714e9fcb063073488ce, type: 3}
+  firePoints:
+  - {fileID: 2634672277972502854}
+  - {fileID: 9174444760578690739}
+  - {fileID: 5458895521519837776}
+  - {fileID: 191634683173292829}
+  range: 5
+  fireRate: 2
+  damage: 1
+  upgradeCost: 50
+  partToRotate: {fileID: 5421391466472136500}
+  turnSpeed: 15
+--- !u!65 &7855468302057820638
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -917,46 +941,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 4, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7292657591863803760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6343465640200486085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef17bcfe7a9ab9c4aacd1784f2bcbf32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tower
-  bulletPrefab: {fileID: 9145768048770594527, guid: 18b6c40db1c17714e9fcb063073488ce, type: 3}
-  firePoints:
-  - {fileID: 2634672277972502854}
-  - {fileID: 9174444760578690739}
-  - {fileID: 5458895521519837776}
-  - {fileID: 191634683173292829}
-  range: 5
-  fireRate: 1
-  damage: 1
-  partToRotate: {fileID: 5421391466472136500}
-  turnSpeed: 15
---- !u!114 &4193783846087603963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6343465640200486085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2140939e407c50b40b24c20590e17722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerClick
 --- !u!1 &6494400773090888148
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5458895521519837776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +987,7 @@ GameObject:
   - component: {fileID: 1066511566384887642}
   - component: {fileID: 1243226959195164772}
   - component: {fileID: 8699679908621344034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2634672277972502854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: firepoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1132,7 @@ GameObject:
   - component: {fileID: 3289110721071821974}
   - component: {fileID: 5912110252289414565}
   - component: {fileID: 7179633373516691685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_2_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

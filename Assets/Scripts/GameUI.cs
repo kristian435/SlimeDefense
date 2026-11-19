@@ -16,9 +16,6 @@ public class GameUI : MonoBehaviour
     [Header("Shop ja tornien UI")]
     [SerializeField] GameObject shopPanel;
     [SerializeField] GameObject towerUIPanel;
-
-    private Tower selectedTower;
-
     void Awake()
     {
         if (Instance == null)
@@ -55,40 +52,5 @@ public class GameUI : MonoBehaviour
                 livesText.text = "HP: " + GameManager.Instance.PlayerLives;
             }
         }
-    }
-    public void SelectTower(Tower tower)
-    {
-        selectedTower = tower;
-
-        if (towerUIPanel != null)
-        {
-            towerUIPanel.SetActive(true);
-
-            TowerUI towerUIComp = towerUIPanel.GetComponent<TowerUI>();
-            if (towerUIComp != null)
-            {
-                towerUIComp.SetTarget(tower);
-            }
-        }
-
-        if (shopPanel != null) shopPanel.SetActive(false);
-    }
-    public void DeSelectAll()
-    {
-        selectedTower = null;
-
-        if (towerUIPanel != null)
-        {
-            towerUIPanel.SetActive(false);
-
-            // Piilotetaan myös TowerUI:n kautta jos tarpeen
-            TowerUI towerUIComp = towerUIPanel.GetComponent<TowerUI>();
-            if (towerUIComp != null)
-            {
-                towerUIComp.Hide();
-            }
-        }
-
-        if (shopPanel != null) shopPanel.SetActive(true);
     }
 }

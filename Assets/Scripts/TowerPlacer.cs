@@ -87,6 +87,12 @@ public class TowerPlacer : MonoBehaviour
                     }
                     Tower towerScript = currentPreviewTower.GetComponent<Tower>();
                     if (towerScript != null) towerScript.enabled = true;
+
+                    Collider[] colliders = currentPreviewTower.GetComponentsInChildren<Collider>();
+                    foreach (Collider col in colliders)
+                    {
+                        col.enabled = true;
+                    }
                     currentPreviewTower = null;
                     Debug.Log("Torni sijoitettu onnistuneesti!");
                 }
