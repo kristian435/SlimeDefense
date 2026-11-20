@@ -101,7 +101,7 @@ public class Tower : MonoBehaviour
     public void Upgrade()
     {
         damage += 1f;
-        range += 5f;
+        range += 0.5f;
         upgradeCost = Mathf.RoundToInt(upgradeCost * 1.5f);
         Debug.Log("Tornia päivitetty! Uusi damage: " + damage);
     }

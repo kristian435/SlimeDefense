@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 10
-  moneyWorth: 200
+  moneyWorth: 100
 --- !u!1 &8561924004879047639
 GameObject:
   m_ObjectHideFlags: 0
